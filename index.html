@@ -26,7 +26,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      z-index: 10;
+      z-index: 9999;
     }
 
     #splash img {
@@ -39,4 +39,34 @@
       color: #444;
     }
 
-    iframe
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="splash">
+    <img src="https://avatars.githubusercontent.com/u/15659472?s=200&v=4" alt="Logo">
+    <p>Loading Amplify Reading...</p>
+  </div>
+
+  <iframe id="gameframe"
+    src="https://game.spynick.com"
+    allowfullscreen
+    sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+  </iframe>
+
+  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        document.getElementById("splash").style.display = "none";
+      }, 2000); // splash screen timeout (2 seconds)
+    };
+  </script>
+</body>
+</html>
