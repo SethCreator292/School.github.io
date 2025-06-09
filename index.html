@@ -39,33 +39,4 @@
       color: #444;
     }
 
-    iframe {
-      border: none;
-      width: 100vw;
-      height: 100vh;
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <div id="splash">
-    <img src="https://cdn.amplify.com/app/icon/apple-touch-icon.png" alt="Amplify Reading Logo">
-    <p>Loading Amplify Reading...</p>
-  </div>
-
-  <iframe 
-    id="mainFrame"
-    src="https://game.spynick.com"
-    allowfullscreen
-    sandbox="allow-scripts allow-forms allow-pointer-lock allow-popups allow-same-origin allow-modals"
-  ></iframe>
-
-  <script>
-    // Splash screen timeout
-    setTimeout(() => {
-      document.getElementById('splash').style.display = 'none';
-      document.getElementById('mainFrame').style.display = 'block';
-    }, 2000);
-  </script>
-</body>
-</html>
+    iframe
