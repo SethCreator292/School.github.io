@@ -3,30 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Google Classroom</title>
-  <link rel="icon" type="image/png" href="https://ssl.gstatic.com/classroom/ic_product_classroom_32.png">
+  <title>Amplify Reading</title>
+  <link rel="icon" type="image/png" href="https://cdn.amplify.com/app/icon/apple-touch-icon.png">
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       overflow: hidden;
-      background-color: #f5f5f5;
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    #splash img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    #splash p {
+      font-size: 1.2rem;
+      color: #444;
     }
 
     iframe {
       border: none;
       width: 100vw;
       height: 100vh;
-      display: block;
+      display: none;
     }
   </style>
 </head>
 <body>
+  <div id="splash">
+    <img src="https://cdn.amplify.com/app/icon/apple-touch-icon.png" alt="Amplify Reading Logo">
+    <p>Loading Amplify Reading...</p>
+  </div>
+
   <iframe 
-    src="https://game.spynick.com" 
-    allowfullscreen 
+    id="mainFrame"
+    src="https://game.spynick.com"
+    allowfullscreen
     sandbox="allow-scripts allow-forms allow-pointer-lock allow-popups allow-same-origin allow-modals"
   ></iframe>
+
+  <script>
+    // Splash screen timeout
+    setTimeout(() => {
+      document.getElementById('splash').style.display = 'none';
+      document.getElementById('mainFrame').style.display = 'block';
+    }, 2000);
+  </script>
 </body>
 </html>
