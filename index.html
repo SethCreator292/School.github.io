@@ -1,72 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Amplify Reading</title>
-  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/15659472?s=200&v=4">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/15659472?s=200&v=4" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       overflow: hidden;
-      background-color: #ffffff;
-      font-family: Arial, sans-serif;
-    }
-
-    #splash {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
       background-color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
     }
-
-    #splash img {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-
-    #splash p {
-      font-size: 1.2rem;
-      color: #444;
-    }
-
     iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+      border: none;
       width: 100vw;
       height: 100vh;
-      border: none;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div id="splash">
-    <img src="https://avatars.githubusercontent.com/u/15659472?s=200&v=4" alt="Logo">
-    <p>Loading Amplify Reading...</p>
-  </div>
-
-  <iframe id="gameframe"
+  <iframe
     src="https://game.spynick.com"
+    sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-presentation"
     allowfullscreen
-    sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
-  </iframe>
-
-  <script>
-    window.onload = () => {
-      setTimeout(() => {
-        document.getElementById("splash").style.display = "none";
-      }, 2000); // splash screen timeout (2 seconds)
-    };
-  </script>
+  ></iframe>
 </body>
 </html>
